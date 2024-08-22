@@ -51,12 +51,12 @@ public class TeacherService {
     }
 
 //
-    public Teacher getTeacherNameByCou(Integer course){
+    public String getTeacherNameByCou(Integer course){
         Teacher teacher=teacherRepository.findTeacherByCoursesId(course);
         if(teacher==null){
             throw new ApiExaption("Course or teacher not found");
         }
-       return teacher;
+       return teacher.getName();
     }
 
 
